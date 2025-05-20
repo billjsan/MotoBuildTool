@@ -34,6 +34,10 @@ if ! grep -Fxq "source \"$CONFIG_FILE\"" "$BASHRC_FILE"; then
     echo "✅ Config and tool script sourced in $BASHRC_FILE"
 fi
 
+
+mkdir -p "$SCRIPT_DIR/out"
+echo "✅ 'out/' folder created at $SCRIPT_DIR"
+
 if is_sourced; then
     source "$CONFIG_FILE"
     source "$FLASH_TOOL_FILE"
