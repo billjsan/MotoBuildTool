@@ -3,24 +3,26 @@
 CONFIG_FILE="$HOME/.moto_build_tool.config"
 BASHRC_FILE="$HOME/.bashrc"
 
-echo "== Moto Build Tool Uninstall =="
+RED='\e[31m'
+GREEN_BOLD='\e[1;32m'
+YELLOW_BOLD='\e[1;33m'
+NC='\e[0m'
 
-
-if grep -q 'Moto Build Tool Setup' "$BASHRC_FILE"; then
-    echo "Clining $BASHRC_FILE..."
-    sed -i '/# Moto Build Tool Setup/,+2d' "$BASHRC_FILE"
-    echo "✅ Lines removed from $BASHRC_FILE"
+echo -e "${YELLOW_BOLD}===== Moto Build Tool Uninstall $MOTO_BUILD_TOOL_VERSION =====${NC}"
+if grep -q "===== Moto Build Tool Setup $MOTO_BUILD_TOOL_VERSION =====" "$BASHRC_FILE"; then
+    echo -e "${YELLOW_BOLD}Cleaning $BASHRC_FILE...${NC}"
+    sed -i "/#===== Moto Build Tool Setup $MOTO_BUILD_TOOL_VERSION =====/,+2d" "$BASHRC_FILE"
+    echo -e "✅${GREEN_BOLD} Lines removed from $BASHRC_FILE${NC}"
 else
-    echo "ℹ️ No modification found $BASHRC_FILE"
+    echo -e "ℹ️ ${RED}No modification found $BASHRC_FILE${NC}"
 fi
-
 
 if [ -f "$CONFIG_FILE" ]; then
     rm "$CONFIG_FILE"
-    echo "Config file removed: $CONFIG_FILE"
+    echo -e "✅${GREEN_BOLD} Config file removed: $CONFIG_FILE${NC}"
 else
-    echo "ℹ️ Any file config found."
+    echo -e "ℹ️ ${RED}Any file config found.${NC}"
 fi
 
-echo "✅ Uninstall complete. Reset terminal to take efect"
+echo -e "✅${GREEN_BOLD} Uninstall complete. Reset terminal to take effect${NC}"
 

@@ -3,15 +3,41 @@ Moto Build Tool
 Ferramenta de linha de comando em Bash para facilitar o processo de build, download
 e instalação de APKs, utilizando SSH para build remoto e ADB para instalação local.
 
-Funcionalidades
+Funcionalidades	
 ---------------
+> v0.2
+
 - Conexão via SSH com servidor remoto de build
+
 - Build de APKs como Settings, TrafficStatsProvider e TrafficStatsTests
+
 - Inclusão opcional de patch (cherry-pick)
+
 - Instalação automática do APK via adb
+
 - Reboot automático do dispositivo
+
 - Armazenamento dos APKs na pasta out/
-Requisitos
+  Requisitos
+
+> v0.3
+
+- Melhora a interação com o usuário
+
+- Menos verboso
+
+- Armazena os logs
+
+- Mais opções de devices
+
+- Localiza o path do apk automaticamente
+
+- Opção de adicionar o nome do device diretamente
+
+- Melhora legibilidade do código
+
+  
+Pre requisitos
 ----------
 - Linux com Bash
 - Acesso SSH ao servidor de build (ex: reston, ladybug)
