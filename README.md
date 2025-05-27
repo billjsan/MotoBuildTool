@@ -36,6 +36,12 @@ Funcionalidades
 
 - Melhora legibilidade do código
 
+> v0.4
+
+- Mais apks suportados
+- Melhora o script de setup para atualizar em futuras versões
+- Atualiza script de uninstall
+
   
 Pre requisitos
 ----------
